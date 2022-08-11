@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.4.13'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    springBootVersion = '2.4.13'
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    /*
+    В Gradle различия между ‘single quotes’ и “double quotes”. Внутрь “double quotes” можно подставлять логику, т.е. перед использование будет evaluate (вычисление). ‘Single quotes’ - это static.
+    '5 + 5 = ${5 + 5}'     5 + 5 = ${5 + 5}     ничего не изменится
+    "5 + 5 = ${5 + 5}"     5 + 5 = 10           произойдёт evaluate
+    */
+}
